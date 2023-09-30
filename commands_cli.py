@@ -90,6 +90,8 @@ def deleteTask(id):
 @cli.command()
 def completeTask():
   tasks = json_manager.readJson()
+  if not tasks:
+    return print('No task has been created')
 
   print(f'=========================================== \n\nAll Task:') 
   for task in tasks:
